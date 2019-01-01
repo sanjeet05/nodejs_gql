@@ -27,6 +27,17 @@ module.exports = {
         }
     },
 
+    article: async (args) => {
+        try {
+            const aid = mongoose.Types.ObjectId(args.articleInput._id);
+            let article = await Article.findById(aid);
+            return transformArticle(article);
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
+
     createArticle: async (args) => {
         const article = new Article({
             title: args.articleInput.title,

@@ -28,6 +28,7 @@ module.exports = buildSchema(`
     
     type RootQuery {
         articles: [Article!]!
+        article(articleInput: ArticleEditInput): Article!
     }
     type RootMutation {
         createArticle(articleInput: ArticleCreateInput): Article
