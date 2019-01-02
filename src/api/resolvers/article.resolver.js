@@ -41,6 +41,7 @@ module.exports = {
     createArticle: async (args) => {
         const article = new Article({
             title: args.articleInput.title,
+            description: args.articleInput.description,
             body: args.articleInput.body
         });
         try {
